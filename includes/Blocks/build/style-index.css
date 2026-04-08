@@ -1,0 +1,707 @@
+/**
+ * Pearl Weather - Pattern Library & Frontend Styles (Part 2)
+ *
+ * Additional styles for pattern library interface, weather displays,
+ * preloaders, modals, responsive utilities, and AQI components.
+ *
+ * @package    PearlWeather
+ * @since      1.0.0
+ */
+
+/* ----------------------------------------------
+ * Pattern Library Filter Styles
+ * ---------------------------------------------- */
+.pw-patterns-template-filter {
+    align-items: center;
+    display: flex;
+    gap: 12px;
+}
+
+.pw-patterns-template-filter select {
+    border-color: var(--pw-border-light);
+    color: var(--pw-text-gray);
+    height: 36px;
+    padding-left: 10px;
+    padding-right: 40px;
+}
+
+.pw-patterns-template-filter input:focus,
+.pw-patterns-template-filter select:focus {
+    border-color: var(--pw-border-light);
+    box-shadow: none;
+    outline: none;
+}
+
+.pw-patterns-template-filter-grid-two-col button,
+.pw-patterns-template-filter-grid-three-col button,
+.pw-patterns-template-filter-love button,
+.pw-patterns-template-filter-reset button {
+    border: 1px solid var(--pw-border-light);
+    border-radius: 4px;
+    color: var(--pw-text-light);
+    cursor: pointer;
+    display: inline-flex;
+    height: 36px;
+    padding: 5px;
+    transition: all 0.3s ease-in-out;
+    width: 36px;
+}
+
+.pw-patterns-template-filter-grid-two-col button.active,
+.pw-patterns-template-filter-grid-two-col button:hover,
+.pw-patterns-template-filter-grid-three-col button.active,
+.pw-patterns-template-filter-grid-three-col button:hover,
+.pw-patterns-template-filter-love button.active,
+.pw-patterns-template-filter-love button:hover,
+.pw-patterns-template-filter-reset button.active,
+.pw-patterns-template-filter-reset button:hover {
+    background-color: var(--pw-primary-color);
+    border-color: transparent;
+    color: #fff;
+}
+
+.pw-patterns-template-filter-love button {
+    background-color: transparent;
+    border: none;
+    border-left: 2px solid #ecedf0;
+    border-radius: 0;
+    margin-left: 2px;
+    padding-left: 1px;
+    position: relative;
+    width: 42px;
+}
+
+.pw-patterns-template-filter-love button span {
+    align-items: center;
+    background: var(--pw-primary-color);
+    border-radius: 50%;
+    color: #fff;
+    display: inline-flex;
+    font-size: 10px;
+    height: 14px;
+    justify-content: center;
+    min-width: 14px;
+    padding: 2px;
+    position: absolute;
+    right: -2px;
+    top: -2px;
+}
+
+.pw-patterns-template-filter-sort {
+    margin-left: auto;
+}
+
+.pw-patterns-template-filter-search {
+    color: var(--pw-text-light);
+    position: relative;
+}
+
+.pw-patterns-template-filter-search input {
+    border-color: #c7c7cc;
+    border-radius: 4px;
+    height: 42px;
+    padding: 3px 38px 3px 18px;
+    width: 368px;
+}
+
+.pw-patterns-template-filter-search span {
+    display: inline-flex;
+    font-size: 18px;
+    position: absolute;
+    right: 14px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+/* ----------------------------------------------
+ * Filter Select Dropdown Styles
+ * ---------------------------------------------- */
+.pw-patterns_filter_select {
+    border: 1px solid var(--pw-border-light);
+    border-radius: 3px;
+    cursor: pointer;
+    font-size: 14px;
+    padding: 8px 10px 8px 8px;
+    position: relative;
+    text-align: left;
+}
+
+.pw-patterns_filter_select.open i {
+    transform: rotate(90deg) translateX(-2px);
+}
+
+.pw-patterns_filter_select .pw-patterns_filter_select_options {
+    background-color: #fff;
+    border: 1px solid var(--pw-border-light);
+    border-radius: 4px;
+    font-size: 14px;
+    left: 0;
+    margin-top: 5px;
+    overflow: auto;
+    position: absolute;
+    top: 100%;
+    width: max-content;
+    z-index: 9999;
+}
+
+.pw-patterns_filter_select .pw-patterns_filter_select_options .pw-patterns_filter_select_option {
+    margin-bottom: 0;
+    padding: 6px 20px;
+    transition: all 0.3s;
+}
+
+.pw-patterns_filter_select .pw-patterns_filter_select_options .pw-patterns_filter_select_option:hover {
+    background-color: var(--pw-primary-color);
+    color: #fff;
+}
+
+/* ----------------------------------------------
+ * Sun Orbit Animation Styles
+ * ---------------------------------------------- */
+.pw-sun-orbit {
+    margin-top: 56px;
+    position: relative;
+}
+
+.pw-sun-orbit-sky {
+    border-top: 4px dotted;
+    border-color: #ff2252;
+    border-radius: 50%;
+    fill: #ffd870;
+    height: 120px;
+    left: 50%;
+    position: absolute;
+    text-align: center;
+    top: -30px;
+    transform: translateX(-50%);
+    width: 120px;
+}
+
+.pw-sun-orbit-sun {
+    animation: pw-circle 6s linear;
+    border-radius: 50%;
+    bottom: 0;
+    height: 30px;
+    left: 0;
+    margin: auto;
+    overflow: hidden;
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 30px;
+}
+
+@keyframes pw-circle {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* ----------------------------------------------
+ * Weather Details Layout Styles
+ * ---------------------------------------------- */
+.pw-weather-details-regular-data .pw-weather-details {
+    display: flex;
+}
+
+/* Column layouts */
+.pw-details-column-two .pw-weather-details-regular-data,
+.pw-details-grid-one .pw-weather-details-regular-data {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    justify-items: start;
+}
+
+.pw-details-grid-two .pw-weather-details-regular-data {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    justify-items: start;
+}
+
+.pw-details-grid-three .pw-weather-details-regular-data {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    justify-items: center;
+}
+
+.pw-details-horizontal-list .pw-weather-details-regular-data {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+/* ----------------------------------------------
+ * Preloader Animation Styles
+ * ---------------------------------------------- */
+.pw-preloader-wrapper {
+    height: 500px;
+    position: relative;
+}
+
+.pw-preloader-wrapper .pw-preloader {
+    height: 80px;
+    left: 50%;
+    margin-left: -55px;
+    margin-top: -100px;
+    position: absolute;
+    top: 50%;
+    width: 80px;
+}
+
+.pw-preloader-wrapper .pw-preloader-sun {
+    animation-duration: 16s;
+    animation-iteration-count: infinite;
+    animation-name: pw-rotate;
+    animation-timing-function: linear;
+    height: 40px;
+    left: 25px;
+    position: absolute;
+    top: 3px;
+    width: 40px;
+}
+
+.pw-preloader-wrapper .pw-preloader-sun path {
+    fill: var(--pw-primary-color);
+    stroke: var(--pw-primary-color);
+    stroke-width: 0.18;
+}
+
+.pw-preloader-wrapper .pw-preloader-rain {
+    height: 70px;
+    margin-left: 3px;
+    margin-top: -22px;
+    position: absolute;
+    width: 70px;
+}
+
+.pw-preloader-wrapper .pw-preloader-drop {
+    animation-duration: 1.7s;
+    animation-iteration-count: infinite;
+    animation-name: pw-drop;
+    background: var(--pw-primary-color);
+    border-radius: 0 0 6px 6px;
+    display: block;
+    float: left;
+    height: 2px;
+    margin-left: 4px;
+    opacity: 1;
+    width: 1px;
+}
+
+/* Drop animation delays */
+.pw-preloader-drop:nth-child(1) { animation-delay: -0.13s; }
+.pw-preloader-drop:nth-child(2) { animation-delay: -0.24s; }
+.pw-preloader-drop:nth-child(3) { animation-delay: -0.39s; }
+.pw-preloader-drop:nth-child(4) { animation-delay: -0.525s; }
+.pw-preloader-drop:nth-child(5) { animation-delay: -0.64s; }
+.pw-preloader-drop:nth-child(6) { animation-delay: -0.79s; }
+.pw-preloader-drop:nth-child(7) { animation-delay: -0.9s; }
+.pw-preloader-drop:nth-child(8) { animation-delay: -1.05s; }
+.pw-preloader-drop:nth-child(9) { animation-delay: -1.13s; }
+.pw-preloader-drop:nth-child(10) { animation-delay: -1.3s; }
+
+@keyframes pw-rotate {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+@keyframes pw-drop {
+    50% {
+        height: 45px;
+        opacity: 0;
+    }
+    51% {
+        opacity: 0;
+    }
+    100% {
+        height: 1px;
+        opacity: 0;
+    }
+}
+
+/* ----------------------------------------------
+ * Custom Slider Navigation
+ * ---------------------------------------------- */
+.pw-custom-slider-nav,
+.pw-swiper-nav {
+    background: none;
+    border: none;
+    outline: none;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 1;
+}
+
+.pw-custom-slider-nav.pw-swiper-nav-next,
+.pw-swiper-nav.pw-swiper-nav-next {
+    right: 0;
+}
+
+.pw-custom-slider-nav.pw-swiper-nav-prev,
+.pw-swiper-nav.pw-swiper-nav-prev {
+    left: 0;
+}
+
+.pw-custom-slider-nav.swiper-button-disabled,
+.pw-swiper-nav.swiper-button-disabled {
+    display: none;
+}
+
+.pw-custom-slider-nav {
+    display: none;
+}
+
+.pw-custom-slider-nav.active {
+    display: block;
+}
+
+.pw-custom-slider {
+    display: flex;
+    overflow-x: auto;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+
+.pw-custom-slider::-webkit-scrollbar {
+    display: none;
+}
+
+/* ----------------------------------------------
+ * Forecast Select Dropdown
+ * ---------------------------------------------- */
+.pw-forecast-select {
+    min-width: 120px;
+    position: relative;
+}
+
+.pw-forecast-select-list {
+    border-radius: 4px;
+    border-style: solid;
+    border-width: 1px;
+    list-style: none;
+    margin: 0;
+    min-width: 124px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    top: calc(100% + 5px);
+    width: max-content;
+    z-index: 9999;
+}
+
+.pw-forecast-select-list li {
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.2;
+    padding: 4px 6px;
+}
+
+.pw-forecast-select .pw-select-active-item {
+    cursor: pointer;
+    padding: 2px 6px;
+}
+
+.pw-forecast-select .pw-forecast-select-svg {
+    transition: all 0.2s ease;
+}
+
+.pw-forecast-select .pw-forecast-select-svg.active {
+    transform: rotate(90deg);
+}
+
+.pw-forecast-select .pw-forecast-select-svg.inactive {
+    transform: rotate(270deg);
+}
+
+/* ----------------------------------------------
+ * Table Layout Styles
+ * ---------------------------------------------- */
+.pw-forecast-table-layout {
+    overflow-x: auto;
+}
+
+.pw-forecast-table-layout table,
+.pw-forecast-table-layout td,
+.pw-forecast-table-layout th {
+    border-collapse: collapse;
+}
+
+.pw-forecast-table-layout td {
+    padding: 12px 14px;
+}
+
+.pw-forecast-table-layout .pw-table-forecast-title {
+    font-size: 27px;
+    font-weight: 600;
+    line-height: 28px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.pw-forecast-table-layout .pw-forecast-table-pagination {
+    margin-top: 30px;
+}
+
+.pw-forecast-table-layout .pw-forecast-table-pagination .pw-forecast-pagination-button {
+    align-items: center;
+    background-color: transparent;
+    border: 1px solid var(--pw-primary-color);
+    border-radius: 4px;
+    cursor: pointer;
+    display: flex;
+    gap: 4px;
+    padding: 12px 16px;
+}
+
+.pw-forecast-table-layout .pw-forecast-table-pagination .pw-forecast-pagination-button.disabled {
+    border-color: #6e6e6e;
+    color: #6e6e6e;
+}
+
+/* ----------------------------------------------
+ * Modal & Popup Styles
+ * ---------------------------------------------- */
+.pw-modal {
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    left: 50%;
+    max-height: 80%;
+    max-width: 540px;
+    overflow-y: auto;
+    padding: 20px;
+    position: fixed;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    z-index: 99999;
+}
+
+.pw-modal-overlay {
+    background-color: rgba(0, 0, 0, 0.5);
+    display: none;
+    height: 100vh;
+    left: 0;
+    position: fixed;
+    top: 0;
+    width: 100vw;
+    z-index: 9999;
+}
+
+.pw-modal-overlay.active {
+    display: block;
+}
+
+.pw-modal-close-button,
+.pw-popup-close-button {
+    background-color: transparent;
+    border: 1px solid #999;
+    border-radius: 50%;
+    color: #999;
+    cursor: pointer;
+    font-size: 13px;
+    height: 25px;
+    line-height: 1;
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    transition: background-color 0.2s ease;
+    width: 25px;
+    z-index: 999;
+}
+
+.pw-modal-close-button:hover,
+.pw-popup-close-button:hover {
+    background-color: rgba(15, 15, 15, 0.8);
+    color: #fff;
+}
+
+/* ----------------------------------------------
+ * Tab Styles
+ * ---------------------------------------------- */
+.pw-tab-pane {
+    display: none;
+}
+
+.pw-tab-pane.active {
+    display: block;
+}
+
+.pw-tab-nav {
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 26px;
+    padding: 12px 24px;
+}
+
+.pw-forecast-tab {
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 1;
+    padding-bottom: 10px;
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+.pw-forecast-tab::after {
+    bottom: 0;
+    content: "";
+    height: 2px;
+    left: 0;
+    position: absolute;
+    transform: scale(0);
+    transition: all 0.2s cubic-bezier(0, 0, 0.2, 1);
+    width: 100%;
+}
+
+.pw-forecast-tab.active::after {
+    transform: scale(1);
+}
+
+/* ----------------------------------------------
+ * Utility Classes (Display)
+ * ---------------------------------------------- */
+.pw-d-none { display: none; }
+.pw-d-grid { display: grid; }
+.pw-d-flex { display: flex; }
+.pw-d-inline-flex { display: inline-flex; }
+.pw-d-block { display: block; }
+.pw-d-inline-block { display: inline-block; }
+.pw-d-disabled { opacity: 0.4; pointer-events: none; }
+
+/* ----------------------------------------------
+ * Utility Classes (Justify Content)
+ * ---------------------------------------------- */
+.pw-justify-start { justify-content: flex-start; }
+.pw-justify-center { justify-content: center; }
+.pw-justify-end { justify-content: flex-end; }
+.pw-justify-between { justify-content: space-between; }
+
+/* ----------------------------------------------
+ * Utility Classes (Align Items)
+ * ---------------------------------------------- */
+.pw-align-start { align-items: flex-start; }
+.pw-align-center { align-items: center; }
+.pw-align-end { align-items: flex-end; }
+
+/* ----------------------------------------------
+ * Utility Classes (Flex/Grid)
+ * ---------------------------------------------- */
+.pw-flex-col { flex-direction: column; }
+.pw-row-reverse { flex-direction: row-reverse; }
+
+/* Grid columns */
+.pw-grid-cols-1 { grid-template-columns: repeat(1, 1fr); }
+.pw-grid-cols-2 { grid-template-columns: repeat(2, 1fr); }
+.pw-grid-cols-3 { grid-template-columns: repeat(3, 1fr); }
+.pw-grid-cols-4 { grid-template-columns: repeat(4, 1fr); }
+.pw-grid-cols-5 { grid-template-columns: repeat(5, 1fr); }
+.pw-grid-cols-6 { grid-template-columns: repeat(6, 1fr); }
+
+/* ----------------------------------------------
+ * Utility Classes (Spacing)
+ * ---------------------------------------------- */
+.pw-m-auto { margin: auto; }
+.pw-m-0 { margin: 0; }
+.pw-p-0 { padding: 0; }
+
+/* Gaps */
+.pw-gap-4px { gap: 4px; }
+.pw-gap-6px { gap: 6px; }
+.pw-gap-8px { gap: 8px; }
+.pw-gap-10px { gap: 10px; }
+.pw-gap-20px { gap: 20px; }
+
+/* Widths */
+.pw-w-50 { width: 50%; }
+.pw-w-full { width: 100%; }
+
+/* ----------------------------------------------
+ * Utility Classes (Typography)
+ * ---------------------------------------------- */
+.pw-text-left { text-align: left; }
+.pw-text-center { text-align: center; }
+.pw-text-right { text-align: right; }
+
+/* Font weights */
+.pw-font-300 { font-weight: 300; }
+.pw-font-400 { font-weight: 400; }
+.pw-font-500 { font-weight: 500; }
+.pw-font-600 { font-weight: 600; }
+.pw-font-700 { font-weight: 700; }
+.pw-font-800 { font-weight: 800; }
+
+/* Font styles */
+.pw-font-normal { font-style: normal; }
+.pw-font-italic { font-style: italic; }
+.pw-font-oblique { font-style: oblique; }
+
+/* Text transforms */
+.pw-text-none { text-transform: none; }
+.pw-text-lowercase { text-transform: lowercase; }
+.pw-text-capitalize { text-transform: capitalize; }
+.pw-text-uppercase { text-transform: uppercase; }
+
+/* ----------------------------------------------
+ * AQI (Air Quality Index) Styles
+ * ---------------------------------------------- */
+.pw-aqi-card-summary .pw-aqi-card-condition .condition {
+    align-items: center;
+    background-color: rgba(var(--pw-aqi-condition-color), 0.2);
+    border: 1px solid rgba(var(--pw-aqi-condition-color), 0.4);
+    border-radius: 3px;
+    color: rgb(var(--pw-aqi-condition-color));
+    display: flex;
+    font-size: 13px;
+    font-weight: 500;
+    gap: 8px;
+    justify-content: center;
+    line-height: 1.2;
+    padding: 4px 16px;
+}
+
+.pw-aqi-card-pollutant-item .pw-pollutant-title.indicator {
+    padding-left: 15px;
+    position: relative;
+}
+
+.pw-aqi-card-pollutant-item .pw-pollutant-title.indicator::after {
+    background: rgb(var(--pw-pollutant-color));
+    border-radius: 50%;
+    content: "";
+    height: 10px;
+    left: 0;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 10px;
+}
+
+/* ----------------------------------------------
+ * Responsive Breakpoints
+ * ---------------------------------------------- */
+@media only screen and (max-width: 599px) {
+    .pw-forecast-table-layout {
+        overflow-x: auto;
+    }
+    
+    .pw-forecast-tabs {
+        flex-wrap: wrap;
+    }
+    
+    .pw-grid-cols-2,
+    .pw-grid-cols-3,
+    .pw-grid-cols-4,
+    .pw-grid-cols-5,
+    .pw-grid-cols-6 {
+        grid-template-columns: repeat(1, 1fr);
+    }
+}
+
+@media only screen and (min-width: 600px) and (max-width: 1023px) {
+    .pw-forecast-table-layout {
+        overflow-x: auto;
+    }
+}

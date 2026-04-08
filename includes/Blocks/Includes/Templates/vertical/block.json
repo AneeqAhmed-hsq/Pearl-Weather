@@ -1,0 +1,158 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "pearl-weather/weather-card",
+	"title": "Weather Card",
+	"category": "widgets",
+	"description": "A beautiful weather card showing current conditions, forecast, and air quality data for any location worldwide.",
+	"keywords": [
+		"weather",
+		"forecast",
+		"temperature",
+		"humidity",
+		"wind",
+		"aqi",
+		"air quality",
+		"map",
+		"climate"
+	],
+	"textdomain": "pearl-weather",
+	"supports": {
+		"html": false,
+		"align": true,
+		"alignWide": true,
+		"spacing": {
+			"margin": true,
+			"padding": true
+		},
+		"color": {
+			"background": true,
+			"text": true,
+			"link": true,
+			"gradients": true
+		},
+		"typography": {
+			"fontSize": true,
+			"lineHeight": true,
+			"fontFamily": true
+		}
+	},
+	"attributes": {
+		"blockId": {
+			"type": "string",
+			"default": ""
+		},
+		"layout": {
+			"type": "string",
+			"default": "vertical"
+		},
+		"align": {
+			"type": "string",
+			"default": "wide"
+		},
+		"showLocationName": {
+			"type": "boolean",
+			"default": true
+		},
+		"showCurrentDate": {
+			"type": "boolean",
+			"default": true
+		},
+		"showCurrentTime": {
+			"type": "boolean",
+			"default": true
+		},
+		"displayTemperature": {
+			"type": "boolean",
+			"default": true
+		},
+		"displayWeatherConditions": {
+			"type": "boolean",
+			"default": true
+		},
+		"displayTemperatureUnit": {
+			"type": "string",
+			"default": "metric"
+		},
+		"displayWeatherForecastData": {
+			"type": "boolean",
+			"default": true
+		},
+		"displayAdditionalData": {
+			"type": "boolean",
+			"default": true
+		},
+		"displayWeatherAttribution": {
+			"type": "boolean",
+			"default": true
+		},
+		"showPreloader": {
+			"type": "boolean",
+			"default": true
+		},
+		"weatherConditionIcon": {
+			"type": "boolean",
+			"default": true
+		},
+		"weatherConditionIconType": {
+			"type": "string",
+			"default": "icon_set_one"
+		},
+		"forecastDataIcon": {
+			"type": "boolean",
+			"default": true
+		},
+		"forecastDataIconType": {
+			"type": "string",
+			"default": "forecast_icon_set_one"
+		},
+		"searchWeatherBy": {
+			"type": "string",
+			"default": "city_name"
+		},
+		"getDataByCityName": {
+			"type": "string",
+			"default": "London, GB"
+		},
+		"getDataByCityID": {
+			"type": "string",
+			"default": "2643743"
+		},
+		"getDataByZIPCode": {
+			"type": "string",
+			"default": "77070,US"
+		},
+		"getDataByCoordinates": {
+			"type": "string",
+			"default": "51.509865,-0.118092"
+		},
+		"customCityName": {
+			"type": "string",
+			"default": ""
+		},
+		"splwDateFormat": {
+			"type": "string",
+			"default": "M j, Y"
+		},
+		"splwCustomDateFormat": {
+			"type": "string",
+			"default": "F j, Y"
+		},
+		"splwTimeFormat": {
+			"type": "string",
+			"default": "g:i A"
+		},
+		"splwTimeZone": {
+			"type": "string",
+			"default": "auto"
+		},
+		"splwLanguage": {
+			"type": "string",
+			"default": "en"
+		}
+	},
+	"editorScript": "pearl-weather-block-editor",
+	"editorStyle": "pearl-weather-block-editor",
+	"style": "pearl-weather-block-frontend",
+	"script": "pearl-weather-block-frontend"
+}
