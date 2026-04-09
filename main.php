@@ -3,7 +3,7 @@
  * Pearl Weather
  *
  * @package           PearlWeather
- * @author            Your Name
+ * @author            Aneeq Ahmed 
  * @copyright         2026 Your Company
  * @license           GPL-2.0-or-later
  *
@@ -12,7 +12,7 @@
  * Description:       Pearl Weather is a powerful WordPress weather forecast plugin that displays real-time weather data using OpenWeatherMap API. Supports auto-location detection, manual location search, and responsive weather widgets.
  * Plugin URI:        https://example.com/pearl-weather
  * Author:            Aneeq Ahmed 
- * Author URI:        https://example.com
+ * Author URI:        https://hsqdigitalhub.com
  * Version:           1.0.0
  * Requires at least: 5.6
  * Requires PHP:      7.4

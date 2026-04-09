@@ -1,0 +1,50 @@
+/**
+ * Pearl Weather - Admin Styles (Minified)
+ * 
+ * @package    PearlWeather
+ * @subpackage Admin
+ * @since      1.0.0
+ * @version    1.0.0
+ */
+
+/* Admin Menu Icon */
+#adminmenu .menu-icon-pearl-weather .wp-menu-image img{width:20px;padding:4px 0;margin-top:3px}
+#adminmenu .menu-icon-pearl-weather div.wp-menu-image{display:flex;justify-content:center;align-items:center}
+#adminmenu #menu-posts-pearl-weather li:nth-child(5) a{border-bottom:1px solid rgba(255,255,255,.1)}
+
+/* Upgrade to Pro Button */
+#adminmenu #menu-posts-pearl-weather li a .pearl-weather-pro-icon{background-image:url(../images/premium.svg);background-repeat:no-repeat;background-position:center;width:16px;display:block;float:left;margin-right:1px;margin-left:-2px;margin-top:-1px}
+#adminmenu #menu-posts-pearl-weather li a .pearl-weather-upgrade-btn{box-sizing:border-box;display:flex;gap:4px;border-radius:4px;background:#11b916;color:#fff;padding:6px 10px;font-weight:500;width:136px}
+#adminmenu #menu-posts-pearl-weather .pearl-weather-upgrade-wrapper{margin-top:-10px}
+
+/* Footer Stars */
+.pearl-weather-footer-star{color:#dba617}
+
+/* Review Notice */
+#pearl-weather-review-notice{padding:18px 15px 18px 0;background-color:#fff;border-radius:5px;margin:20px 20px 0 0;box-shadow:0 0 20px 0 rgba(36,39,50,.08)}
+#pearl-weather-review-notice .pearl-weather-plugin-icon{width:125px;float:left;line-height:90px;text-align:center;margin-left:8px}
+#pearl-weather-review-notice .pearl-weather-plugin-icon img{max-width:94px;vertical-align:middle;margin-right:8px}
+#pearl-weather-review-notice .pearl-weather-notice-text{overflow:hidden}
+#pearl-weather-review-notice .pearl-weather-notice-text h3{font-size:24px;margin:0 0 5px;font-weight:400;line-height:1}
+#pearl-weather-review-notice .pearl-weather-notice-text p{margin:10px 0;font-size:13px}
+#pearl-weather-review-notice .pearl-weather-notice-text p.pearl-weather-review-actions{margin:10px 0 2px}
+#pearl-weather-review-notice .pearl-weather-notice-text .pearl-weather-review-actions a{text-decoration:none;margin-right:8px;color:#63a37b;display:inline-block;position:relative}
+#pearl-weather-review-notice .pearl-weather-notice-text .pearl-weather-review-actions a span{padding-right:2px}
+#pearl-weather-review-notice .pearl-weather-notice-text .pearl-weather-review-actions a.button{color:#fff}
+
+/* RTL Support */
+.rtl #pearl-weather-review-notice{margin:20px 0 0 20px;padding:18px 0 18px 15px}
+.rtl #pearl-weather-review-notice .pearl-weather-plugin-icon{float:right;margin:0 0 0 8px}
+
+/* Menu States */
+.menu-icon-pearl-weather.wp-not-current-submenu .wp-menu-image.dashicons-before{background-image:url(../images/menu-weather-gray.svg);background-position:10px center;background-repeat:no-repeat}
+.menu-icon-pearl-weather.wp-has-current-submenu .wp-menu-image.dashicons-before{background-image:url(../images/menu-weather.svg);background-position:10px center;background-repeat:no-repeat}
+
+/* Offer Banner */
+#pearl-weather-offer-banner{padding:0;border:0;line-height:0;background:0 0}
+#pearl-weather-offer-banner a:focus,#pearl-weather-offer-banner .notice-dismiss:focus{outline:0;box-shadow:none}
+#pearl-weather-offer-banner button.pearl-weather-offer-banner-dismiss:before{color:#fff;font-size:22px}
+
+/* Responsive Adjustments - Mobile */
+@media screen and (max-width:782px){#pearl-weather-review-notice .pearl-weather-plugin-icon{width:80px;line-height:60px}#pearl-weather-review-notice .pearl-weather-plugin-icon img{max-width:60px}#pearl-weather-review-notice .pearl-weather-notice-text h3{font-size:20px}}
+@media screen and (max-width:600px){#pearl-weather-review-notice .pearl-weather-plugin-icon{display:none}.pearl-weather-upgrade-btn{width:100%!important}}

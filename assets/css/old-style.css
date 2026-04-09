@@ -1,0 +1,275 @@
+/**
+ * Pearl Weather - Frontend Widget Styles
+ *
+ * @package    PearlWeather
+ * @subpackage Frontend
+ * @since      1.0.0
+ * @version    1.0.0
+ */
+
+/* ============================================================================
+   Main Widget Container
+   ============================================================================ */
+
+.pearl-weather-widget {
+    text-align: center;
+    padding: 20px;
+    max-width: 100%;
+    margin: 0 auto;
+    box-sizing: border-box;
+}
+
+/* Responsive adjustments for mobile */
+@media screen and (max-width: 480px) {
+    .pearl-weather-widget {
+        padding: 15px;
+    }
+}
+
+/* ============================================================================
+   Utility Classes
+   ============================================================================ */
+
+.pearl-weather-hidden {
+    display: none !important;
+}
+
+.pearl-weather-visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    border: 0;
+}
+
+/* ============================================================================
+   Weather Icon / Image Container
+   ============================================================================ */
+
+.pearl-weather-icon {
+    display: inline-block;
+    margin-bottom: 10px;
+}
+
+.pearl-weather-icon img {
+    border-radius: 0;
+    box-shadow: none;
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* ============================================================================
+   Weather Information Elements
+   ============================================================================ */
+
+/* Base span styling */
+.pearl-weather-widget span {
+    display: block;
+    margin-bottom: 5px;
+}
+
+/* Weather type/condition text */
+.pearl-weather-condition {
+    color: #b4b4b4;
+    text-transform: uppercase;
+    font-size: 12px;
+    letter-spacing: 0.5px;
+    margin-top: 5px;
+}
+
+/* Temperature display */
+.pearl-weather-temperature {
+    font-size: 60px;
+    font-weight: 700;
+    color: #525b6e;
+    line-height: 80px;
+    margin: 5px 0;
+}
+
+/* Responsive temperature for mobile */
+@media screen and (max-width: 480px) {
+    .pearl-weather-temperature {
+        font-size: 48px;
+        line-height: 64px;
+    }
+}
+
+/* Date display */
+.pearl-weather-date {
+    text-transform: uppercase;
+    font-size: 14px;
+    margin-bottom: 10px;
+    color: #666;
+    font-weight: 500;
+}
+
+/* Location/Region display */
+.pearl-weather-location {
+    font-size: 12px;
+    color: #888;
+    margin-top: 5px;
+}
+
+/* ============================================================================
+   Additional Weather Details (Optional)
+   ============================================================================ */
+
+/* Humidity, wind, pressure etc. */
+.pearl-weather-details {
+    margin-top: 15px;
+    padding-top: 10px;
+    border-top: 1px solid #eee;
+    font-size: 12px;
+    color: #777;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.pearl-weather-detail-item {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.pearl-weather-detail-label {
+    font-weight: 600;
+}
+
+.pearl-weather-detail-value {
+    font-weight: 400;
+}
+
+/* ============================================================================
+   Loading State
+   ============================================================================ */
+
+.pearl-weather-loading {
+    text-align: center;
+    padding: 30px;
+}
+
+.pearl-weather-loading-spinner {
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    border: 3px solid #f3f3f3;
+    border-top: 3px solid #3498db;
+    border-radius: 50%;
+    animation: pearl-weather-spin 1s linear infinite;
+}
+
+@keyframes pearl-weather-spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* ============================================================================
+   Error State
+   ============================================================================ */
+
+.pearl-weather-error {
+    text-align: center;
+    padding: 20px;
+    color: #d32f2f;
+    background-color: #ffebee;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+/* ============================================================================
+   Refresh Button
+   ============================================================================ */
+
+.pearl-weather-refresh {
+    margin-top: 15px;
+}
+
+.pearl-weather-refresh-btn {
+    background: none;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 5px 10px;
+    font-size: 11px;
+    cursor: pointer;
+    color: #666;
+    transition: all 0.3s ease;
+}
+
+.pearl-weather-refresh-btn:hover {
+    background-color: #f5f5f5;
+    border-color: #bbb;
+    color: #333;
+}
+
+/* ============================================================================
+   Dark Mode Support (Optional - respects WordPress dark mode)
+   ============================================================================ */
+
+@media (prefers-color-scheme: dark) {
+    .pearl-weather-widget {
+        background-color: #1e1e1e;
+        color: #e0e0e0;
+    }
+    
+    .pearl-weather-temperature {
+        color: #e0e0e0;
+    }
+    
+    .pearl-weather-condition {
+        color: #9e9e9e;
+    }
+    
+    .pearl-weather-date {
+        color: #bdbdbd;
+    }
+    
+    .pearl-weather-location {
+        color: #9e9e9e;
+    }
+    
+    .pearl-weather-details {
+        border-top-color: #333;
+    }
+    
+    .pearl-weather-error {
+        background-color: #2c2c2c;
+        color: #ef9a9a;
+    }
+    
+    .pearl-weather-refresh-btn {
+        background-color: #2c2c2c;
+        border-color: #444;
+        color: #ccc;
+    }
+    
+    .pearl-weather-refresh-btn:hover {
+        background-color: #3a3a3a;
+        border-color: #666;
+    }
+}
+
+/* ============================================================================
+   Print Styles
+   ============================================================================ */
+
+@media print {
+    .pearl-weather-refresh,
+    .pearl-weather-loading-spinner {
+        display: none;
+    }
+    
+    .pearl-weather-widget {
+        padding: 0;
+        color: #000;
+    }
+    
+    .pearl-weather-temperature {
+        color: #000;
+    }
+}

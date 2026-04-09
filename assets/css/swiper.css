@@ -1,0 +1,36 @@
+// In your Assets_Loader class
+public function register_scripts() {
+    // Register Swiper CSS from CDN (faster, cached across sites)
+    wp_register_style(
+        'swiper',
+        'https://cdn.jsdelivr.net/npm/swiper@8.4.6/swiper-bundle.min.css',
+        array(),
+        '8.4.6'
+    );
+    
+    // OR register local version
+    wp_register_style(
+        'swiper',
+        PEARL_WEATHER_ASSETS_URL . 'lib/swiper/swiper.min.css',
+        array(),
+        '8.4.6'
+    );
+    
+    // Register Swiper JS
+    wp_register_script(
+        'swiper',
+        'https://cdn.jsdelivr.net/npm/swiper@8.4.6/swiper-bundle.min.js',
+        array(),
+        '8.4.6',
+        true
+    );
+    
+    // Register plugin's weather slider that depends on Swiper
+    wp_register_script(
+        'pearl-weather-slider',
+        PEARL_WEATHER_ASSETS_URL . 'js/weather-slider.js',
+        array( 'swiper', 'jquery' ),
+        PEARL_WEATHER_VERSION,
+        true
+    );
+}

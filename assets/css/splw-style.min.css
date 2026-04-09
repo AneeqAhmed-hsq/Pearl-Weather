@@ -1,0 +1,119 @@
+/**
+ * Pearl Weather - Advanced Frontend Styles (Minified)
+ *
+ * @package    PearlWeather
+ * @subpackage Frontend
+ * @since      1.0.0
+ * @version    1.0.0
+ */
+
+/* Main Wrapper */
+.pearl-weather-wrapper{display:flex;justify-content:center;flex-direction:column;font-size:16px;line-height:1.5;text-align:center;color:#fff;position:relative;overflow:hidden}
+
+/* Widget Title */
+.pearl-weather-title{font-size:27px;text-align:center;font-weight:700;text-transform:capitalize;line-height:1.2}
+
+/* Header Section */
+.pearl-weather-wrapper .pearl-weather-header{text-align:center}
+.pearl-weather-wrapper .pearl-weather-header-title-wrapper{display:inline-block}
+.pearl-weather-wrapper .pearl-weather-header-title{font-size:27px;font-weight:700;line-height:38px;margin-bottom:4px}
+.pearl-weather-wrapper .pearl-weather-current-time{display:inline-block;font-size:14px;font-weight:600;margin-bottom:10px}
+
+/* Body Section */
+.pearl-weather-wrapper .pearl-weather-body{width:100%;margin:0 auto;padding-bottom:20px;font-size:.875em;font-weight:400}
+
+/* Current Temperature */
+.pearl-weather-wrapper .pearl-weather-current-temp{text-align:center}
+.pearl-weather-wrapper .pearl-weather-current-temp span.current-temperature{font-size:48px;font-weight:700;line-height:56px}
+.pearl-weather-wrapper .pearl-weather-current-text{margin-top:10px}
+.pearl-weather-wrapper .pearl-weather-current-temp .pearl-weather-icon{display:inline;box-shadow:none;width:58px}
+.pearl-weather-current-temp .temperature-scale{font-size:21px;vertical-align:top;line-height:20px;margin-top:6px;margin-left:4px;display:inline-block;font-weight:500}
+
+/* Weather Description */
+.pearl-weather-wrapper .pearl-weather-description{display:inline-block;font-size:16px;font-weight:600;line-height:20px;text-transform:capitalize}
+.pearl-weather-wrapper .pearl-weather-current-temp-flex{display:flex;justify-content:center;line-height:initial;align-items:center}
+
+/* Daily Details */
+.pearl-weather-wrapper .pearl-weather-daily-details .pearl-weather-other-options{display:flex;flex-direction:column;font-size:14px;font-weight:400;line-height:20px;margin-top:8px}
+.pearl-main-wrapper .pearl-weather-details .options-value{font-weight:600}
+.pearl-main-wrapper .pearl-weather-daily-details .pearl-weather-other-options div:not(.pearl-weather-icons){padding-bottom:4px}
+
+/* Weather Icons */
+.pearl-weather-icons{display:flex;justify-content:space-between;margin-top:16px;order:7}
+.pearl-main-wrapper .pearl-weather-details div:not(.pearl-weather-icons) span.details-icon{display:inline-flex;margin-right:2px}
+.pearl-main-wrapper .pearl-weather-details div:not(.pearl-weather-icons) span.details-icon i{font-size:16px}
+
+/* Attribution */
+.pearl-weather-wrapper .pearl-weather-attribution{padding:.5em 1em;font-size:11px;text-align:center;background:rgba(0,0,0,.1)}
+.pearl-weather-wrapper .pearl-weather-attribution a{text-decoration:none}
+.pearl-weather-wrapper .pearl-weather-warning{padding:20px}
+
+/* Updated Time */
+.pearl-main-wrapper .pearl-weather-detailed-updated-time{display:flex;justify-content:space-between;padding:6px 0;font-size:11px}
+.pearl-weather-detailed-updated-time .pearl-weather-detailed{text-align:left}
+.pearl-weather-detailed-updated-time .pearl-weather-updated-time{text-align:right}
+.pearl-weather-wrapper .pearl-weather-detailed-updated-time a{text-decoration:underline dotted;text-decoration-color:#ffffff75;color:#fff}
+
+/* Gutenberg Editor */
+.block-editor-page a.pearl-weather-gb-edit-button,a.pearl-weather-gb-edit-button{display:inline-block;text-decoration:underline;font-size:16px;margin:10px 0}
+.pearl-weather-gutenberg-shortcode.editor-styles-wrapper{padding:0;line-height:24px;width:100%}
+.pearl-weather-gutenberg-shortcode.editor-styles-wrapper>select{max-width:100%}
+.pearl-weather-gutenberg-shortcode.editor-styles-wrapper::after{display:none}
+
+/* Horizontal Layout */
+.pearl-main-wrapper.horizontal .pearl-weather-templates-body{display:flex;row-gap:10px}
+.pearl-main-wrapper.horizontal .pearl-weather-templates-body div{flex:0 0 50%;text-align:left}
+.pearl-main-wrapper.horizontal .pearl-weather-current-temp-flex{justify-content:flex-start}
+.pearl-main-wrapper.horizontal .pearl-weather-description{text-align:left;width:100%}
+.pearl-main-wrapper.horizontal .pearl-weather-templates-body div.pearl-weather-daily-details{flex:0 0 50%}
+.pearl-main-wrapper.horizontal .pearl-weather-daily-details .pearl-weather-other-options{flex-direction:row;flex-wrap:wrap;margin-top:0}
+.pearl-main-wrapper.horizontal .pearl-weather-daily-details .pearl-weather-other-options div:nth-child(even){text-align:right}
+.pearl-main-wrapper.horizontal .pearl-weather-header-title-wrapper{display:flex;flex-direction:row;justify-content:flex-start;align-items:center}
+.pearl-main-wrapper.horizontal .pearl-weather-wrapper .pearl-weather-header-title{font-size:14px;line-height:20px}
+
+/* Forecast Section - Vertical */
+.vertical .pearl-weather-forecast{display:flex;align-items:center}
+.pearl-weather-wrapper .pearl-weather-forecast-header-area{display:flex;justify-content:space-between;flex-wrap:wrap;flex:1;align-items:center;font-size:16px;letter-spacing:0;text-transform:none;margin-top:0;margin-bottom:0;line-height:20px}
+
+/* Forecast Select Dropdown */
+.pearl-weather-wrapper .pearl-weather-forecast-select{position:relative}
+.pearl-weather-wrapper .pearl-weather-forecast-select select{background-color:transparent;font-size:16px;border:0;outline:0;color:#fff;transition:.3s;border-radius:0;width:auto;line-height:21px;appearance:none;-webkit-appearance:none;-moz-appearance:none;background:0 0;line-height:38px;padding-right:20px;position:relative}
+.pearl-weather-wrapper .pearl-weather-forecast-select::after{content:'';position:absolute;background-color:#fff;width:100%;height:1.5px;bottom:7px;left:0}
+.pearl-weather-select-arrow{position:absolute!important;right:-14px;left:auto;top:6px;bottom:0;transform:rotate(270deg)}
+.pearl-weather-select-arrow .pearl-weather-icon-chevron:before{font-size:14px}
+
+/* Forecast Tabs */
+.entry-content ul.pearl-weather-tabs,.pearl-weather-tabs{display:flex;list-style-type:none!important;margin:0;padding:0;flex-wrap:wrap}
+.horizontal .pearl-weather-advanced-forecast-days .pearl-weather-tab.active,.pearl-weather-forecast-section .pearl-weather-tab.active{opacity:1;margin-bottom:0}
+.pearl-weather-tab{cursor:pointer;margin-right:16px;padding-top:10px;padding-bottom:10px;opacity:.8;position:relative}
+li.pearl-weather-tab::after{position:absolute;width:100%;content:'';height:2px;bottom:0;background:#fff;left:0;transition:all .2s cubic-bezier(0,0,.2,1);transform:scale(0)}
+li.pearl-weather-tab.active::after{transform:scale(1)}
+.horizontal .pearl-weather-forecast-header-area{border-bottom:1px solid rgba(236,234,233,.5);margin-left:-20px;margin-right:-20px}
+.horizontal .pearl-weather-forecast-header-area .pearl-weather-tabs{padding-left:20px}
+
+/* Pro Version Toggles */
+.pearl-pro-wrapper .pearl-weather-details span:is(.temp-precipitation,.temp-min-mex,.temp-rainchance,.temp-wind,.temp-snow,.temp-humidity,.temp-pressure){display:none}
+.pearl-pro-wrapper .pearl-weather-details span:is(.temp-precipitation,.temp-min-mex,.temp-rainchance,.temp-wind,.temp-snow,.temp-humidity,.temp-pressure).active{display:inline-block}
+
+/* Tab Content Visibility */
+[data-tab-content]{visibility:hidden;position:absolute}
+.active[data-tab-content]{visibility:visible;position:static}
+
+/* Horizontal Forecast Wrapper */
+.horizontal .pearl-weather-forecast-wrapper{display:flex;justify-content:space-between;flex-direction:row;font-size:16px;line-height:1.5;text-align:center;position:relative;overflow:hidden}
+.pearl-weather-wrapper .pearl-weather-forecast>div{display:flex;flex:1 1;flex-wrap:nowrap;justify-content:center}
+.pearl-weather-wrapper .pearl-weather-forecast .temp-min-mex .temperature-scale{display:none}
+.horizontal .pearl-weather-wrapper .pearl-weather-forecast{display:flex;flex-direction:column;align-items:center;justify-content:center;pointer-events:painted;cursor:pointer;gap:10px}
+.horizontal .pearl-weather-forecast-wrapper .pearl-weather-forecast{padding:14px 0 0 0}
+
+/* Vertical Forecast Alignment */
+.vertical .pearl-weather-wrapper .pearl-weather-forecast .pearl-weather-forecast-time{justify-content:flex-start}
+.vertical .pearl-weather-wrapper .pearl-weather-forecast .pearl-weather-details{justify-content:flex-end}
+
+/* Block Editor Styles */
+.block-editor-page .editor-styles-wrapper .pearl-weather-wrapper .pearl-weather-forecast-select select,
+.pearl-weather-wrapper .pearl-weather-forecast-select select{background-color:transparent;font-size:16px;border:0;outline:0;transition:.3s;border-radius:0;width:auto;line-height:21px;appearance:none;-webkit-appearance:none;-moz-appearance:none;background:0 0;line-height:38px;padding-right:20px;position:relative}
+
+/* Responsive Breakpoints */
+@media screen and (max-width:768px){.pearl-weather-wrapper .pearl-weather-header-title{font-size:22px;line-height:30px}.pearl-weather-wrapper .pearl-weather-current-temp span.current-temperature{font-size:40px;line-height:48px}.pearl-weather-tab{margin-right:12px;padding-top:8px;padding-bottom:8px;font-size:14px}}
+@media screen and (max-width:480px){.pearl-weather-wrapper .pearl-weather-forecast-header-area{flex-direction:column;gap:10px}.horizontal .pearl-weather-forecast-wrapper{flex-direction:column}.pearl-weather-tabs{justify-content:center}}

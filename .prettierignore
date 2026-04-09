@@ -1,0 +1,13 @@
+# Ignore everything
+*
+
+# Allow src folder and its contents
+!src/
+!src/**
+
+# Allow includes/Blocks/assets/script.js specifically
+!includes/
+!includes/Blocks/
+!includes/Blocks/assets/
+!includes/Blocks/assets/js/
+!includes/Blocks/assets/js/script.js
