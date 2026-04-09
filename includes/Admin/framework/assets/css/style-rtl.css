@@ -1,0 +1,760 @@
+/**
+ * Pearl Weather Framework RTL Styles
+ *
+ * Right-to-Left (RTL) overrides for the framework CSS.
+ * Supports Arabic, Hebrew, Persian, Urdu, and other RTL languages.
+ *
+ * @package    PearlWeather
+ * @since      1.0.0
+ */
+
+/* ----------------------------------------------
+ * 01. Base
+ * ---------------------------------------------- */
+
+.pw-framework {
+    direction: rtl;
+}
+
+.pw-framework-options {
+    margin-right: 20px;
+    margin-left: 0;
+}
+
+/* ----------------------------------------------
+ * 01. 01. Header
+ * ---------------------------------------------- */
+
+.pw-header h1 {
+    float: left;
+}
+
+.pw-header fieldset {
+    float: right;
+}
+
+.pw-header-left {
+    float: left;
+    display: inline-flex;
+    gap: 10px;
+}
+
+.pw-header-right {
+    float: right;
+}
+
+/* ----------------------------------------------
+ * 01. 02. Header Buttons
+ * ---------------------------------------------- */
+
+.pw-buttons {
+    float: right;
+    direction: ltr;
+}
+
+/* ----------------------------------------------
+ * 01. 03. Navigation
+ * ---------------------------------------------- */
+
+.pw-nav {
+    float: left;
+}
+
+.pw-nav ul {
+    clear: left;
+}
+
+.pw-nav ul li {
+    float: right;
+}
+
+.pw-nav ul li .pw-active:after {
+    right: auto;
+    left: 0;
+}
+
+.pw-nav ul li .pw-arrow:after {
+    content: "\f053";
+    right: auto;
+    left: 10px;
+}
+
+.pw-nav ul li.pw-tab-expanded .pw-arrow:after {
+    transform: rotate(-90deg);
+}
+
+.pw-nav ul ul li a {
+    padding-right: 25px;
+    padding-left: 15px;
+}
+
+.pw-nav ul ul:before {
+    left: auto;
+    right: 15px;
+}
+
+.pw-nav .pw-tab-icon {
+    margin-left: 5px;
+    margin-right: 0;
+}
+
+.pw-nav-background {
+    left: auto;
+    right: 0;
+}
+
+/* ----------------------------------------------
+ * 01. 04. Content
+ * ---------------------------------------------- */
+
+.pw-content {
+    margin-left: 0;
+    margin-right: 225px;
+}
+
+/* ----------------------------------------------
+ * 01. 05. Section
+ * ---------------------------------------------- */
+
+.pw-section {
+    float: right;
+    width: 100%;
+}
+
+/* Tabbed Navigation */
+.pw-tab-nav {
+    float: right;
+    width: 100%;
+}
+
+.pw-tab-button.pw-active {
+    box-shadow: inset -3px 0 var(--pw-primary);
+    border-left: none;
+}
+
+.pw-tab-button {
+    margin-left: -1px;
+    border-right: none;
+    margin-right: 0;
+    border-left: 1px solid var(--pw-border);
+}
+
+/* ----------------------------------------------
+ * 01. 06. Show All Options
+ * ---------------------------------------------- */
+
+.pw-show-all .pw-content {
+    margin-right: 0;
+    overflow: hidden;
+}
+
+.pw-expand-all {
+    float: right;
+    right: auto;
+    left: 40px;
+    margin-right: 0;
+    margin-left: 4px;
+}
+
+/* ----------------------------------------------
+ * 01. 07. Search Input
+ * ---------------------------------------------- */
+
+.pw-search {
+    float: right;
+}
+
+.pw-search input {
+    margin: 0 0 0 5px;
+}
+
+/* ----------------------------------------------
+ * 01. 08. Copyright
+ * ---------------------------------------------- */
+
+.pw-copyright {
+    float: right;
+}
+
+/* ----------------------------------------------
+ * 01. 09. Metabox
+ * ---------------------------------------------- */
+
+.pw-metabox {
+    margin: -6px -12px -12px -12px;
+}
+
+.pw-section-title .pw-section-icon {
+    margin-left: 5px;
+    margin-right: 0;
+}
+
+/* ----------------------------------------------
+ * 02. Fields
+ * ---------------------------------------------- */
+
+.pw-field .pw-field-label {
+    float: right;
+}
+
+.pw-field .pw-field-control {
+    float: left;
+}
+
+.pw-pseudo-field {
+    padding: 0 0 0 5px !important;
+}
+
+/* ----------------------------------------------
+ * 02. 01. Field: typography
+ * ---------------------------------------------- */
+
+.pw-field-typography select {
+    margin: 0;
+    width: 100%;
+}
+
+.pw-field-typography .pw-blocks-inputs .pw-blocks {
+    flex-direction: row-reverse;
+}
+
+.pw-field-typography .pw-unit {
+    right: auto;
+    left: 1px;
+    border-radius: 4px 0 0 4px;
+}
+
+/* ----------------------------------------------
+ * 02. 02. Field: checkbox, radio
+ * ---------------------------------------------- */
+
+.pw-field-checkbox ul ul li,
+.pw-field-radio ul ul li {
+    margin-left: 0;
+    margin-right: 8px;
+}
+
+.pw-field-checkbox ul ul li:first-child,
+.pw-field-radio ul ul li:first-child {
+    margin-right: 0;
+}
+
+.pw-field-checkbox .pw-inline-list li,
+.pw-field-radio .pw-inline-list li {
+    margin-right: 0;
+    margin-left: 15px;
+}
+
+.pw-field-checkbox .pw-text,
+.pw-field-radio .pw-text {
+    margin-left: 0;
+    margin-right: 5px;
+}
+
+/* ----------------------------------------------
+ * 02. 03. Field: switcher
+ * ---------------------------------------------- */
+
+.pw-field-switcher .pw-switcher {
+    float: right;
+}
+
+.pw-field-switcher .pw-label {
+    float: right;
+    margin-left: 0;
+    margin-right: 5px;
+}
+
+/* ----------------------------------------------
+ * 02. 04. Field: upload
+ * ---------------------------------------------- */
+
+.pw-field-upload .pw-remove,
+.pw-field-upload .pw-button {
+    margin-left: 0;
+    margin-right: 5px;
+}
+
+/* ----------------------------------------------
+ * 02. 05. Field: group
+ * ---------------------------------------------- */
+
+.pw-field-group .pw-cloneable-title {
+    padding: 15px 10px 15px 65px;
+}
+
+.pw-field-group .pw-cloneable-helper {
+    right: auto;
+    left: 10px;
+}
+
+/* ----------------------------------------------
+ * 02. 06. Field: repeater
+ * ---------------------------------------------- */
+
+.pw-field-repeater .pw-repeater-helper {
+    border-left: 0;
+    border-right: 1px solid var(--pw-border-light);
+}
+
+/* ----------------------------------------------
+ * 02. 07. Field: help
+ * ---------------------------------------------- */
+
+.pw-help {
+    right: auto;
+    left: 5px;
+}
+
+/* ----------------------------------------------
+ * 02. 08. Field: icon
+ * ---------------------------------------------- */
+
+.pw-field-icon .button {
+    margin-right: 0;
+    margin-left: 5px;
+}
+
+.pw-field-icon .pw-icon-preview i {
+    margin-right: 0;
+    margin-left: 5px;
+}
+
+/* ----------------------------------------------
+ * 02. 09. Field: gallery
+ * ---------------------------------------------- */
+
+.pw-field-gallery ul li {
+    margin-right: 0;
+    margin-left: 5px;
+}
+
+.pw-field-gallery .button {
+    margin-right: 0;
+    margin-left: 5px;
+}
+
+/* ----------------------------------------------
+ * 02. 10. Field: sorter
+ * ---------------------------------------------- */
+
+.pw-field-sorter .pw-modules {
+    float: right;
+}
+
+.pw-field-sorter .pw-enabled {
+    margin-right: 0;
+    margin-left: 15px;
+}
+
+/* ----------------------------------------------
+ * 02. 11. Field: tabbed
+ * ---------------------------------------------- */
+
+.pw-field-tabbed .pw-tabbed-nav {
+    float: right;
+}
+
+.pw-field-tabbed .pw-tabbed-nav .pw-icon {
+    padding-right: 0;
+    padding-left: 5px;
+}
+
+.pw-field-tabbed .pw-tabbed-nav a {
+    margin-right: 0;
+    margin-left: 5px;
+}
+
+.pw-field-tabbed .pw-tabbed-nav a.pw-tabbed-active {
+    box-shadow: inset -3px 0 var(--pw-primary);
+    border-left: none;
+}
+
+/* ----------------------------------------------
+ * 02. 12. Field: media
+ * ---------------------------------------------- */
+
+.pw-field-media .button {
+    margin-left: 0;
+    margin-right: 7px;
+}
+
+.pw-field-media .hidden + .button {
+    margin-right: 0;
+}
+
+/* ----------------------------------------------
+ * 02. 13. Field: notice
+ * ---------------------------------------------- */
+
+.pw-notice {
+    border-left: none;
+    border-right-style: solid;
+    border-right-width: 4px;
+}
+
+/* ----------------------------------------------
+ * 02. 14. Field: border, spacing, dimensions
+ * ---------------------------------------------- */
+
+.pw-field-border .pw-inputs,
+.pw-field-border .pw-color,
+.pw-field-spacing .pw-inputs,
+.pw-field-spacing .pw-color,
+.pw-field-dimensions .pw-inputs,
+.pw-field-dimensions .pw-color {
+    float: right;
+}
+
+.pw-field-border .pw-color,
+.pw-field-spacing .pw-color,
+.pw-field-dimensions .pw-color {
+    margin-right: 4px;
+    direction: rtl;
+}
+
+.pw-field-border .pw-input,
+.pw-field-border .pw-fieldset,
+.pw-field-spacing .pw-input,
+.pw-field-spacing .pw-fieldset,
+.pw-field-dimensions .pw-input,
+.pw-field-dimensions .pw-fieldset {
+    direction: ltr;
+}
+
+/* ----------------------------------------------
+ * 02. 15. Field: background
+ * ---------------------------------------------- */
+
+.pw-field-background .pw-block {
+    float: right;
+}
+
+.pw-field-background .pw-select,
+.pw-field-background .pw-media {
+    padding-right: 0;
+}
+
+.pw-field-background .pw-title {
+    margin-right: 0;
+    margin-left: 5px;
+}
+
+/* ----------------------------------------------
+ * 02. 16. Field: spinner
+ * ---------------------------------------------- */
+
+.pw-field-spinner .pw-spin {
+    float: right;
+    direction: ltr;
+}
+
+.pw-field-spinner .ui-spinner-button {
+    border-radius: 0;
+}
+
+.pw-field-spinner .ui-spinner-down {
+    order: 4;
+    border-left: 0;
+    border-right: 1px solid #7e8993;
+    border-radius: 0 4px 4px 0;
+}
+
+.pw-field-spinner .ui-spinner-up {
+    order: 1;
+    border-right: 0;
+    border-left: 1px solid #7e8993;
+    border-radius: 4px 0 0 4px;
+}
+
+/* ----------------------------------------------
+ * 02. 17. Field: slider
+ * ---------------------------------------------- */
+
+.pw-field-slider .pw-slider-ui {
+    direction: ltr;
+    margin-right: 0;
+    margin-left: 15px;
+}
+
+.pw-field-slider .pw-input {
+    direction: ltr;
+}
+
+.pw-field-slider .pw-unit {
+    border-left: 0;
+    border-right: 1px solid #7e8993;
+    border-radius: 4px 0 0 4px;
+}
+
+/* ----------------------------------------------
+ * 02. 18. Field: button_set
+ * ---------------------------------------------- */
+
+.pw-field-button_set .pw-button-group {
+    float: right;
+}
+
+.pw-field-button_set .pw-button {
+    float: right;
+}
+
+.pw-field-button_set .pw-button:first-child {
+    border-radius: 0 4px 4px 0;
+}
+
+.pw-field-button_set .pw-button:last-child {
+    border-radius: 4px 0 0 4px;
+}
+
+/* ----------------------------------------------
+ * 02. 19. Field: link_color
+ * ---------------------------------------------- */
+
+.pw-field-link_color .pw-left {
+    float: right;
+    margin-right: 0;
+    margin-left: 10px;
+}
+
+/* ----------------------------------------------
+ * 02. 20. Field: color_group
+ * ---------------------------------------------- */
+
+.pw-field-color_group .pw-left {
+    float: right;
+    margin-right: 0;
+    margin-left: 10px;
+}
+
+/* ----------------------------------------------
+ * 02. 21. Field: palette
+ * ---------------------------------------------- */
+
+.pw-field-palette .pw-palette {
+    margin-right: 0;
+    margin-left: 10px;
+}
+
+/* ----------------------------------------------
+ * 02. 22. Field: accordion
+ * ---------------------------------------------- */
+
+.pw-field-accordion .pw-icon {
+    margin-right: 0;
+    margin-left: 2px;
+}
+
+.pw-field-accordion .pw-accordion-title {
+    padding: 15px 15px 15px 40px;
+}
+
+.pw-field-accordion .pw-accordion-helper {
+    right: auto;
+    left: 10px;
+}
+
+/* ----------------------------------------------
+ * 02. 23. Field: date
+ * ---------------------------------------------- */
+
+.pw-field-date .pw-to {
+    margin-left: 0;
+    margin-right: 7px;
+}
+
+/* ----------------------------------------------
+ * 02. 24. Field: map
+ * ---------------------------------------------- */
+
+.pw-field-map .pw-map-input:last-child {
+    padding-left: 0;
+    padding-right: 10px;
+}
+
+/* ----------------------------------------------
+ * 02. 25. Field: sortable
+ * ---------------------------------------------- */
+
+.pw-field-sortable .pw-sortable-helper {
+    border-left: none;
+    border-right: 1px solid var(--pw-border-light);
+}
+
+/* ----------------------------------------------
+ * 02. 26. Field: number
+ * ---------------------------------------------- */
+
+.pw-field-number .pw-wrap {
+    float: right;
+}
+
+/* ----------------------------------------------
+ * 03. Taxonomy
+ * ---------------------------------------------- */
+
+.pw-taxonomy-add-fields {
+    margin-right: 0;
+    margin-left: 30px;
+}
+
+.pw-taxonomy-add-fields .pw-field > .pw-field-control > .pw-help {
+    left: -5px;
+    right: auto;
+}
+
+.pw-taxonomy-edit-fields {
+    margin-right: 0;
+    margin-left: 35px;
+}
+
+.pw-taxonomy-edit-fields .pw-field > .pw-field-control > .pw-help {
+    right: auto;
+    left: -5px;
+}
+
+/* ----------------------------------------------
+ * 04. Profile
+ * ---------------------------------------------- */
+
+.pw-profile-options > h2 > .fa {
+    padding-right: 0;
+    padding-left: 7px;
+}
+
+.pw-profile-options > .pw-field > .pw-field-control > .pw-help {
+    left: -5px;
+    right: auto;
+}
+
+/* ----------------------------------------------
+ * 05. Nav Menu
+ * ---------------------------------------------- */
+
+.pw-nav-menu-options > .pw-fields {
+    margin-left: 0;
+    margin-right: -10px;
+}
+
+.pw-nav-menu-title {
+    padding-left: 14px;
+    padding-right: 12px;
+}
+
+.pw-nav-menu-icon {
+    margin-right: 0;
+    margin-left: 5px;
+}
+
+/* ----------------------------------------------
+ * 06. Modal
+ * ---------------------------------------------- */
+
+.pw-modal-content .pw-field {
+    padding: 15px 15px 15px 30px;
+}
+
+.pw-modal-title {
+    padding: 0 16px 0 36px;
+}
+
+.pw-modal-close {
+    right: auto;
+    left: 0;
+}
+
+/* ----------------------------------------------
+ * 07. Customizer
+ * ---------------------------------------------- */
+
+.control-section .pw-field .pw-field-control {
+    margin-right: 0;
+}
+
+/* ----------------------------------------------
+ * 08. Responsive
+ * ---------------------------------------------- */
+
+@media only screen and (max-width: 1200px) {
+    .pw-metabox .pw-field .pw-field-control {
+        margin-left: 0;
+    }
+}
+
+@media only screen and (max-width: 782px) {
+    .pw-framework .pw-field-control,
+    .pw-framework .pw-content {
+        margin-right: 0;
+    }
+}
+
+/* ----------------------------------------------
+ * 09. Others
+ * ---------------------------------------------- */
+
+.pw-field .pw-transparent-slider {
+    margin-left: 0;
+    margin-right: 2px;
+}
+
+.pw-field .pw-transparent-slider .ui-slider-handle {
+    margin: 0 -11px;
+}
+
+.pw-field .pw-transparent-offset {
+    background-position: center right;
+}
+
+.pw-field .pw-transparent-text {
+    right: auto;
+    left: 10px;
+}
+
+/* Pro Badge in RTL */
+.pw-pro-badge {
+    margin-left: 0;
+    margin-right: 8px;
+}
+
+.pw-pro-only:after {
+    right: auto;
+    left: 5px;
+}
+
+/* Chosen Select RTL */
+.chosen-rtl .chosen-choices li.search-field input[type="text"] {
+    text-align: right;
+}
+
+.chosen-rtl .chosen-drop {
+    left: auto;
+    right: 0;
+}
+
+/* Color Picker RTL */
+.wp-picker-container {
+    direction: ltr;
+}
+
+.pw-field-color .wp-picker-container {
+    float: right;
+}
+
+.pw-field-color .wp-color-result {
+    margin: 0 0 0 6px;
+}
+
+/* Shortcode Copy Area RTL */
+.pw-shortcode-area {
+    direction: rtl;
+}
+
+.pw-shortcode-code {
+    direction: ltr;
+    text-align: left;
+}
+
+.pw-after-copy-text {
+    left: auto;
+    right: 180px;
+}
