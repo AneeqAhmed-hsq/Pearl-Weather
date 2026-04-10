@@ -5,34 +5,21 @@ if ( ! defined( 'ABSPATH' ) ) { exit; }
 
 class TemplateLoader {
 
-    /**
-     * Available templates registered in the system.
-     * Add more entries here to add new templates.
-     */
     public static function registered() {
         return apply_filters( 'atmopress_templates', array(
-            'card'       => array( 'label' => __( 'Card',       'atmopress-weather' ), 'file' => 'card.php' ),
-            'minimal'    => array( 'label' => __( 'Minimal',    'atmopress-weather' ), 'file' => 'minimal.php' ),
-            'grid'       => array( 'label' => __( 'Grid',       'atmopress-weather' ), 'file' => 'grid.php' ),
-            'horizontal' => array( 'label' => __( 'Horizontal', 'atmopress-weather' ), 'file' => 'horizontal.php' ),
-            'forecast'   => array( 'label' => __( 'Forecast',   'atmopress-weather' ), 'file' => 'forecast.php' ),
+            'template-1' => array( 'label' => __( 'Classic Card',   'atmopress-weather' ), 'file' => 'template-1.php', 'preview' => 'card' ),
+            'template-2' => array( 'label' => __( 'Modern Grid',    'atmopress-weather' ), 'file' => 'template-2.php', 'preview' => 'grid' ),
+            'template-3' => array( 'label' => __( 'Minimal Strip',  'atmopress-weather' ), 'file' => 'template-3.php', 'preview' => 'minimal' ),
+            'template-4' => array( 'label' => __( 'Dark Immersive', 'atmopress-weather' ), 'file' => 'template-4.php', 'preview' => 'dark' ),
         ) );
     }
 
-    /**
-     * Render a weather template with given data and config.
-     *
-     * @param  string $template  Template slug.
-     * @param  array  $weather   Normalized weather data.
-     * @param  array  $config    Widget config from block/shortcode attrs.
-     * @return string  HTML output.
-     */
     public static function render( $template, $weather, $config = array() ) {
-        $config = wp_parse_args( $config, self::default_config() );
-
+        $config    = wp_parse_args( $config, self::default_config() );
         $templates = self::registered();
+
         if ( ! isset( $templates[ $template ] ) ) {
-            $template = 'card';
+            $template = 'template-1';
         }
 
         $file = ATMOPRESS_TPL_DIR . $templates[ $template ]['file'];
@@ -46,47 +33,44 @@ class TemplateLoader {
         return ob_get_clean();
     }
 
-    /**
-     * Default widget configuration options.
-     */
     public static function default_config() {
+        $s = Settings::get_all();
         return array(
-            'template'          => 'card',
-            'location'          => Settings::get( 'default_location', 'London' ),
-            'units'             => Settings::get( 'units', 'metric' ),
-            'show_search'       => true,
-            'show_geolocation'  => true,
-            'show_humidity'     => true,
-            'show_wind'         => true,
-            'show_pressure'     => true,
-            'show_visibility'   => true,
-            'show_feels_like'   => true,
-            'show_sunrise'      => true,
-            'show_hourly'       => true,
-            'show_daily'        => true,
-            'forecast_days'     => 7,
-            'hourly_count'      => 8,
-            'color_primary'     => '#2563eb',
-            'color_bg'          => '#ffffff',
-            'color_text'        => '#1e293b',
-            'border_radius'     => 16,
-            'font_size'         => 14,
+            'template'          => $s['default_template'],
+            'location'          => $s['default_location'],
+            'units'             => $s['units'],
+            'show_search'       => $s['show_search'],
+            'show_geolocation'  => $s['show_geolocation'],
+            'show_temperature'  => $s['show_temperature'],
+            'show_humidity'     => $s['show_humidity'],
+            'show_wind'         => $s['show_wind'],
+            'show_pressure'     => $s['show_pressure'],
+            'show_visibility'   => $s['show_visibility'],
+            'show_feels_like'   => $s['show_feels_like'],
+            'show_sunrise'      => $s['show_sunrise'],
+            'show_hourly'       => $s['show_hourly'],
+            'show_daily'        => $s['show_daily'],
+            'forecast_days'     => $s['forecast_days'],
+            'hourly_count'      => $s['hourly_count'],
+            'color_primary'     => $s['color_primary'],
+            'color_bg'          => $s['color_bg'],
+            'color_text'        => $s['color_text'],
+            'color_accent'      => $s['color_accent'],
+            'border_radius'     => $s['border_radius'],
+            'card_spacing'      => $s['card_spacing'],
+            'font_size'         => $s['font_size'],
+            'font_family'       => $s['font_family'],
+            'icon_style'        => $s['icon_style'],
+            'forecast_style'    => $s['forecast_style'],
             'custom_class'      => '',
         );
     }
 
-    /**
-     * Generate a unique widget ID for DOM targeting.
-     */
     public static function widget_id( $prefix = 'atmopress' ) {
         static $counter = 0;
         ++$counter;
         return $prefix . '-' . $counter;
     }
-
-    /* ------------------------------------------------------------------
-     * Template helpers (used inside template files)
-     * ------------------------------------------------------------------ */
 
     public static function unit_label( $units ) {
         return 'imperial' === $units ? '°F' : '°C';
@@ -106,15 +90,16 @@ class TemplateLoader {
     }
 
     public static function css_vars( $config ) {
-        $radius = absint( $config['border_radius'] );
-        $fsize  = absint( $config['font_size'] );
         return sprintf(
-            '--ap-primary:%s;--ap-bg:%s;--ap-text:%s;--ap-radius:%spx;--ap-fsize:%spx;',
-            esc_attr( $config['color_primary'] ),
-            esc_attr( $config['color_bg'] ),
-            esc_attr( $config['color_text'] ),
-            $radius,
-            $fsize
+            '--ap-primary:%s;--ap-bg:%s;--ap-text:%s;--ap-accent:%s;--ap-radius:%spx;--ap-spacing:%spx;--ap-fsize:%spx;--ap-font:%s;',
+            esc_attr( $config['color_primary']  ?? '#2563eb' ),
+            esc_attr( $config['color_bg']       ?? '#ffffff' ),
+            esc_attr( $config['color_text']     ?? '#1e293b' ),
+            esc_attr( $config['color_accent']   ?? '#06b6d4' ),
+            absint( $config['border_radius']    ?? 16 ),
+            absint( $config['card_spacing']     ?? 16 ),
+            absint( $config['font_size']        ?? 14 ),
+            esc_attr( $config['font_family']    ?? 'inherit' )
         );
     }
 }

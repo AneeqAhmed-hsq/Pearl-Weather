@@ -1,0 +1,130 @@
+I have already built a working weather plugin, but the admin interface is too basic.
+I want you to redesign the plugin UI and features based on the attached screenshots.
+
+IMPORTANT:
+Use the screenshots as UI/UX reference only. Do NOT copy any plugin code.
+Create an original implementation with a similar layout, structure, and feature set.
+
+========================
+ADMIN PANEL REQUIREMENTS
+========================
+
+Create a professional WordPress admin menu like this:
+
+Main Menu: Weather Plugin
+Submenu:
+
+* Getting Started
+* Blocks
+* Saved Templates
+* Settings
+* Manage Weather
+* Add New Weather
+* Tools
+* Upgrade to Pro (UI only, no restriction)
+
+========================
+SETTINGS PAGE (LIKE SCREENSHOT)
+===============================
+
+Create a settings page with:
+
+1. OpenWeatherMap API Key input
+2. Units dropdown (Metric °C / Imperial °F)
+3. Cache Duration (seconds)
+4. Default Location input
+5. Save Changes button
+
+Add sections:
+
+General Settings
+Display Settings
+Template Settings
+API Settings
+Advanced Settings
+
+========================
+FEATURES TO ADD
+===============
+
+Add these features:
+
+* Multiple templates selector
+* Layout selector (grid, card, minimal, horizontal)
+* Show/hide toggle:
+
+  * Temperature
+  * Wind
+  * Humidity
+  * Pressure
+  * Sunrise/Sunset
+* 7 day forecast
+* 15 day forecast
+* Hourly forecast
+* Auto detect location
+* Manual location search
+* Multiple widget support
+* Custom colors
+* Typography control
+* Icon style selector
+* Forecast style selector
+* Card spacing control
+
+========================
+TEMPLATE SYSTEM
+===============
+
+Create:
+
+templates/
+
+* template-1.php
+* template-2.php
+* template-3.php
+* template-4.php
+
+Add template selector dropdown in admin.
+
+========================
+ADMIN UI STYLE
+==============
+
+Make UI:
+
+* WordPress native design
+* Card based layout
+* Section headings
+* Toggle switches
+* Dropdown selectors
+* Tabs (General / Design / Advanced)
+* Clean spacing
+* Professional look
+
+========================
+BLOCK EDITOR FEATURES
+=====================
+
+Add Gutenberg block controls:
+
+* Template select
+* Layout select
+* City select
+* Forecast days select
+* Toggle elements
+* Style controls
+
+========================
+IMPORTANT
+=========
+
+Do not keep UI simple.
+Make it like a professional premium plugin.
+All features must remain FREE.
+Code must be modular and extendable.
+
+After implementation:
+
+* Show new file structure
+* Show templates system
+* Show admin UI code location
+* Explain how to add more templates
