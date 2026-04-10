@@ -1,0 +1,80 @@
+I have uploaded a WordPress plugin ZIP named "location-weather".
+I want you to analyze its functionality and build a new plugin from scratch with a similar feature set, but not copying any code, names, or structure. The new plugin must be original and independently implemented.
+
+Main Goal
+
+Create a WordPress weather plugin that replicates the behavior and features of the reference plugin, including features that appear to be premium/paid, but implement them as free features in the new plugin.
+
+Requirements
+Do NOT copy code from the original plugin
+Do NOT reuse class names, function names, or file structure
+Build a clean, original architecture
+Use modern WordPress standards (Gutenberg compatible)
+Plugin must be lightweight and fast
+No license violations
+Core Features to Implement
+Location-based weather (auto detect city)
+Manual city search option
+Multiple weather layouts/templates
+Current weather display
+7-day forecast
+15-day forecast
+Hourly forecast
+Temperature unit switch (C/F)
+Wind, humidity, pressure data
+Weather icons and condition display
+Multiple design styles
+Responsive mobile-friendly layout
+Gutenberg block support
+Shortcode support
+Elementor widget support (optional if possible)
+Customizable colors
+Customizable typography
+Show/hide weather elements toggle
+Multiple widget instances
+Fast API-based data loading
+Plugin Structure (Create clean new structure)
+
+weather-plugin/
+
+weather-plugin.php
+includes/
+blocks/
+templates/
+assets/css/
+assets/js/
+admin/
+build/
+Admin Features
+Template selector
+Layout selector
+Toggle options (wind, humidity, etc.)
+Unit selector
+API settings
+Style settings
+Frontend Features
+Multiple templates
+Grid layout
+Horizontal layout
+Minimal layout
+Card layout
+Forecast layout
+Technical Requirements
+Use REST API for weather data
+Use React for Gutenberg block
+Use modular JS structure
+Separate templates from logic
+Dynamic rendering
+Clean reusable components
+Important
+
+This must be a new plugin inspired by functionality only, not a clone.
+All premium-like features should be available for free.
+Code must be clean, documented, and extendable.
+
+After building:
+
+Show file structure
+Explain templates system
+Explain how to add new templates
+Explain how to add new features

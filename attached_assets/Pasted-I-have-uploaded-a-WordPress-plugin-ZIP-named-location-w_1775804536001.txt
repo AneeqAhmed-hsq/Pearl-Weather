@@ -1,0 +1,91 @@
+I have uploaded a WordPress plugin ZIP named "location-weather".
+I want you to analyze its functionality and build a **new plugin from scratch** with a **similar feature set**, but **not copying any code, names, or structure**. The new plugin must be original and independently implemented.
+
+### Main Goal
+
+Create a WordPress weather plugin that replicates the **behavior and features** of the reference plugin, including features that appear to be premium/paid, but implement them as **free features** in the new plugin.
+
+### Requirements
+
+* Do NOT copy code from the original plugin
+* Do NOT reuse class names, function names, or file structure
+* Build a clean, original architecture
+* Use modern WordPress standards (Gutenberg compatible)
+* Plugin must be lightweight and fast
+* No license violations
+
+### Core Features to Implement
+
+1. Location-based weather (auto detect city)
+2. Manual city search option
+3. Multiple weather layouts/templates
+4. Current weather display
+5. 7-day forecast
+6. 15-day forecast
+7. Hourly forecast
+8. Temperature unit switch (C/F)
+9. Wind, humidity, pressure data
+10. Weather icons and condition display
+11. Multiple design styles
+12. Responsive mobile-friendly layout
+13. Gutenberg block support
+14. Shortcode support
+15. Elementor widget support (optional if possible)
+16. Customizable colors
+17. Customizable typography
+18. Show/hide weather elements toggle
+19. Multiple widget instances
+20. Fast API-based data loading
+
+### Plugin Structure (Create clean new structure)
+
+weather-plugin/
+
+* weather-plugin.php
+* includes/
+* blocks/
+* templates/
+* assets/css/
+* assets/js/
+* admin/
+* build/
+
+### Admin Features
+
+* Template selector
+* Layout selector
+* Toggle options (wind, humidity, etc.)
+* Unit selector
+* API settings
+* Style settings
+
+### Frontend Features
+
+* Multiple templates
+* Grid layout
+* Horizontal layout
+* Minimal layout
+* Card layout
+* Forecast layout
+
+### Technical Requirements
+
+* Use REST API for weather data
+* Use React for Gutenberg block
+* Use modular JS structure
+* Separate templates from logic
+* Dynamic rendering
+* Clean reusable components
+
+### Important
+
+This must be a **new plugin inspired by functionality only**, not a clone.
+All premium-like features should be available for free.
+Code must be clean, documented, and extendable.
+
+After building:
+
+* Show file structure
+* Explain templates system
+* Explain how to add new templates
+* Explain how to add new features
